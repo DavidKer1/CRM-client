@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 import { setContext } from "apollo-link-context";
 
 const httpLink = createHttpLink({
-   uri: 'http://localhost:4000',
+   uri: 'https://ocalhost:4000/',
    fetch
 });
 const authLink = setContext((_,{ headers }) => {

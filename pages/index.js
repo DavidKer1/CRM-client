@@ -3,6 +3,7 @@ import {gql, useQuery} from "@apollo/client";
 import {useRouter} from "next/router";
 import Link from "next/link";
 import Cliente from "../components/Cliente";
+import SimpleBar from "simplebar-react";
 const OBTENER_CLIENTES_USUARIO = gql`
 	query obtenerClientesVendedor {
 		obtenerClientesVendedor {
@@ -58,7 +59,11 @@ const Index = () => {
 							Nuevo Cliente
 						</a>
 					</Link>
-					<div className="overflow-x-scroll">
+					<div 
+						className="overflow-x-scroll" 
+					
+					>
+
 						<table className="table-auto shadow-md mt-10 w-full w-lg">
 							<thead className="bg-gray-800">
 								<tr className="text-white">
@@ -73,7 +78,7 @@ const Index = () => {
 							<tbody className="bg-gray-100">
 								{data.obtenerClientesVendedor.map((cliente) => (
 									<Cliente key={cliente.id} cliente={cliente} />
-								))}
+									))}
 							</tbody>
 						</table>
 					</div>
